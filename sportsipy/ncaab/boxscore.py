@@ -668,8 +668,7 @@ class Boxscore:
                 continue
             if short_field == 'away_ranking' or \
                short_field == 'home_ranking':
-                #value = self._parse_ranking(short_field, boxscore)
-                value = '0-0'
+                value = self._parse_ranking(short_field, boxscore)
                 setattr(self, field, value)
                 continue
             if short_field == 'summary':
@@ -681,7 +680,8 @@ class Boxscore:
                 index = BOXSCORE_ELEMENT_INDEX[short_field]
             if short_field == 'away_record' or \
                short_field == 'home_record':
-                value = self._parse_record(short_field, boxscore, index)
+                #value = self._parse_record(short_field, boxscore, index)
+                value = '0-0'
                 setattr(self, field, value)
                 continue
             value = utils._parse_field(BOXSCORE_SCHEME,
